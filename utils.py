@@ -2,6 +2,18 @@ import random
 import time
 
 
+def dormir(tempo: float):
+    time.sleep(tempo)
+
+
+def dormir_tempo_aleatorio(tempo_min: float, tempo_max: float):
+    time.sleep(random.uniform(tempo_min, tempo_max))
+
+
+def testar_probabilidade(probabilidade: float):
+    return random.random() < probabilidade
+
+
 def id_eh_valido(id_sensor: str):
     err_msg = None
     if id_sensor == "":
@@ -16,7 +28,7 @@ def id_eh_valido(id_sensor: str):
 
 
 def simular_delay():
-    time.sleep(random.uniform(5.0, 12.0))
+    dormir_tempo_aleatorio(5.0, 12.0)
 
 
 def obter_dado():
